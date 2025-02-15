@@ -1,0 +1,58 @@
+site_name: NexusAI Documentation
+site_description: Enterprise AI Agent Orchestration Platform
+site_author: NexusAI Team
+repo_url: https://github.com/erosnol/ai-compliance
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: purple
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - User Guide:
+    - Core Concepts: user-guide/concepts.md
+    - Agent Management: user-guide/agents.md
+    - Task Orchestration: user-guide/tasks.md
+    - Security: user-guide/security.md
+    - Compliance: user-guide/compliance.md
+  - API Reference:
+    - Core API: api/core.md
+    - Security API: api/security.md
+    - Compliance API: api/compliance.md
+    - Connectors API: api/connectors.md
+  - Advanced:
+    - Configuration: advanced/configuration.md
+    - Deployment: advanced/deployment.md
+    - Best Practices: advanced/best-practices.md
+  - Contributing: contributing.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - src/nexusai
